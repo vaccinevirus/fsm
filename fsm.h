@@ -1,14 +1,26 @@
 #pragma once
 
-class FSM
+class IState
 {
+	virtual void UpdateState(float elapsedTime) {};
+	virtual void Render() {};
+	virtual void OnEnter() {};
+	virtual void OnExit() {};
+};
+
+class CFSM
+{
+public: 
+	CFSM();
+	~CFSM();
+
 public:
-	enum m_State{State_COMBAT, State_LOCAL_MAP, State_WORLD_MAP, State_MENU};
+	State m_state;
 
-	FSM();
-	~FSM();
-
-
+	void UpdateState();
+	void OnEnter();
+	void OnExit();
+	void ChangeState(State _state);
 
 };
 
