@@ -1,13 +1,5 @@
 #pragma once
 
-class IState
-{
-	virtual void UpdateState(float elapsedTime) {};
-	virtual void Render() {};
-	virtual void OnEnter() {};
-	virtual void OnExit() {};
-};
-
 class CFSM
 {
 public: 
